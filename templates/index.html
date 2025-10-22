@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Gestion des Étudiants</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    
+    <header class="main-header">
+        <h1>Gestion des Étudiants</h1>
+    </header>
+
+    <nav class="main-nav">
+    <ul class="nav-list">
+        <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link {% if request.endpoint == 'index' %}current{% endif %}">Accueil</a></li>
+        <li class="nav-item"><a href="{{ url_for('register') }}" class="nav-link {% if request.endpoint == 'register' %}current{% endif %}">Ajouter un autre étudiant</a></li>
+        
+        <li class="nav-item">
+            {% if session.logged_in %}
+                <a href="{{ url_for('show_students') }}" class="nav-link">Liste des Étudiants</a>
+            {% else %}
+                <a href="{{ url_for('login') }}" class="nav-link">Liste des Étudiants (Connexion)</a>
+            {% endif %}
+        </li>
+        
+        {% if session.logged_in %}
+            <li class="nav-item"><a href="{{ url_for('logout') }}" class="nav-link">Déconnexion</a></li>
+        {% endif %}
+    </ul>
+    </nav>
+    
+    <main class="container">
+        <h2 class="page-title">Bienvenue sur le site de gestion des étudiants</h2>
+        <p class="content-paragraph">Utilisez les liens de navigation ci-dessus pour gérer la base de données des étudiants. Ce site est une démonstration du Backend avec Flask et Python.</p>
+    </main>
+
+    <footer class="main-footer">
+        <p class="footer-text">&copy; 2026 Site de Gestion des Étudiants | Développé par Mohamed</p>
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,231 @@
+/* --- الإعدادات العامة والتنسيقات الأساسية --- */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6; /* خلفية خفيفة */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.page-title {
+    color: #0056b3;
+    border-bottom: 3px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+/* --- تنسيق الـ Header وقائمة التنقل --- */
+.main-header {
+    background-color: #007bff; /* أزرق أساسي */
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.main-nav {
+    background-color: #333;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-item {
+    margin: 0 1px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    padding: 15px 25px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover, .current {
+    background-color: #0056b3;
+}
+
+/* --- تنسيق الـ Footer --- */
+.main-footer {
+    background-color: #333;
+    color: #bbb;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 40px;
+}
+
+.footer-text {
+    font-size: 0.85em;
+    margin: 0;
+}
+
+/* --- تنسيق رسائل Flash (الخطأ والنجاح) --- */
+.flash-messages {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.alert {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+/* لون للرسائل التي تحتوي على كلمة 'Erreur' */
+.alert:has(> *[class*="Erreur"]) {
+    background-color: #f8d7da; /* خلفية حمراء فاتحة */
+    color: #721c24; /* خط أحمر غامق */
+    border: 1px solid #f5c6cb;
+}
+
+/* لون للرسائل التي تحتوي على كلمة 'Succès' */
+.alert:has(> *[class*="Succès"]) {
+    background-color: #d4edda; /* خلفية خضراء فاتحة */
+    color: #155724; /* خط أخضر غامق */
+    border: 1px solid #c3e6cb;
+}
+
+/* --- تنسيق الجداول (Table Styling) --- */
+.data-table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.table-caption {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+    color: #555;
+}
+
+.table-header {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+.table-row:nth-child(even) { /* تلوين الصفوف الزوجية */
+    background-color: #f2f2f2;
+}
+
+.table-row:hover {
+    background-color: #ddd;
+}
+
+.table-data {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.empty-message {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+}
+
+/* --- تنسيق النموذج (Form Styling) --- */
+.data-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-input, .form-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    font-size: 1em;
+}
+
+/* --- تنسيق الأزرار (Button Styling) --- */
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #28a745; /* أخضر للإرسال */
+    color: white;
+    width: 100%;
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #218838;
+}
+/* --- تنسيق أزرار الإجراءات في الجدول --- */
+.action-buttons {
+    text-align: center;
+    width: 150px; /* لتحديد عرض العمود */
+}
+
+.btn-action {
+    padding: 5px 10px;
+    margin: 3px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    text-decoration: none;
+    color: white;
+}
+
+.btn-edit {
+    background-color: #ffc107; /* أصفر/برتقالي للتعديل */
+}
+
+.btn-edit:hover {
+    background-color: #e0a800;
+}
+
+.btn-delete {
+    background-color: #dc3545; /* أحمر للحذف */
+    border: none; /* لأن زر الحذف button وليس a */
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}

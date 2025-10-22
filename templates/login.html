@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion Administrateur</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    
+    <header class="main-header">
+        <h1>Accès à la Liste des Étudiants</h1>
+    </header>
+
+    <nav class="main-nav">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link">Accueil</a></li>
+            <li class="nav-item"><a href="{{ url_for('register') }}" class="nav-link">Inscription</a></li>
+            <li class="nav-item"><a href="{{ url_for('login') }}" class="nav-link current">Connexion</a></li>
+            {% if session.logged_in %}
+                <li class="nav-item"><a href="{{ url_for('logout') }}" class="nav-link">Déconnexion</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    
+    <main class="container">
+        <h2 class="page-title">Veuillez vous connecter</h2>
+        
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for message in messages %}
+                        <p class="alert">{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        
+        <div class="form-wrapper"> 
+            <form action="{{ url_for('login') }}" method="POST" class="data-form">
+                
+                <div class="form-group">
+                    <label for="username" class="form-label">Nom d'utilisateur (Email):</label>
+                    <input type="email" id="username" name="username" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password" class="form-label">Mot de passe :</label>
+                    <input type="password" id="password" name="password" class="form-input" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Se Connecter</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p class="footer-text">&copy; 2026 Site de Gestion des Étudiants | Développé par Mohamed</p>
+    </footer>
+</body>
+</html>

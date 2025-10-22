@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Étudiants Enregistrés</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    
+    <header class="main-header">
+        <h1>Liste des Étudiants Enregistrés</h1>
+    </header>
+
+    <nav class="main-nav">
+    <ul class="nav-list">
+        <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link">Accueil</a></li>
+        <li class="nav-item"><a href="{{ url_for('register') }}" class="nav-link">Ajouter un autre étudiant</a></li>
+        <li class="nav-item"><a href="{{ url_for('show_students') }}" class="nav-link current">Liste des Étudiants</a></li>
+        
+        <li class="nav-item"><a href="{{ url_for('logout') }}" class="nav-link">Déconnexion</a></li>
+    </ul>
+    </nav>
+    
+    <main class="container">
+        <h2 class="page-title">Tableau des Étudiants</h2>
+        
+        <table class="data-table">
+            <caption class="table-caption">Liste complète des étudiants inscrits (Mise à jour automatique)</caption>
+            <thead>
+                <tr>
+                    <th class="table-header">Nom Complet</th>
+                    <th class="table-header">Email</th>
+                    <th class="table-header">Numéro ID</th>
+                    <th class="table-header">Classe</th> 
+                    <th class="table-header">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                <tr class="table-row">
+                    <td class="table-data">{{ student.name }}</td>
+                    <td class="table-data">{{ student.email }}</td>
+                    <td class="table-data">{{ student.id }}</td>
+                    <td class="table-data">{{ student.classe }}</td>
+                    <td class="table-data action-buttons">
+                        <a href="{{ url_for('edit_student', student_id=student.id) }}" class="btn btn-action btn-edit">Modifier</a>
+                        
+                        <form method="POST" action="{{ url_for('delete_student', student_id=student.id) }}" style="display:inline;">
+                            <button type="submit" class="btn btn-action btn-delete" onclick="return confirm('Êtes-vous sûr de vouloir supprimer {{ student.name }} ?');">Supprimer</button>
+                        </form>
+                    </td>
+                </tr>
+                {% else %}
+                <tr class="table-row">
+                    <td colspan="5" class="table-data empty-message">Aucun étudiant n'est enregistré pour le moment.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <p class="summary-text">
+            <b>Nombre total d'étudiants : {{ students | length }}</b>
+        </p>
+    </main>
+
+    <footer class="main-footer">
+        <p class="footer-text">&copy; 2026 Site de Gestion des Étudiants | Développé par Mohamed</p>
+    </footer>
+</body>
+</html>

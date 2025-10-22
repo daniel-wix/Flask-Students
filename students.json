@@ -1,0 +1,29 @@
+[
+    {
+        "id": "8",
+        "name": "mohamed",
+        "email": "test@hotmail",
+        "classe": "BCG"
+    },
+    {
+        "id": "242424",
+        "name": "mohamed",
+        "email": "mohamed@hoymail"
+    },
+    {
+        "id": "242324",
+        "name": "ahmed",
+        "email": "ahmed@hotmail"
+    },
+    {
+        "id": "242424",
+        "name": "mohamed",
+        "email": "acto@gmail"
+    },
+    {
+        "id": "14",
+        "name": "mh",
+        "email": "bardo@gmail",
+        "classe": "PHYSIQUE"
+    }
+]

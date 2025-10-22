@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier {{ student.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    
+    <header class="main-header">
+        <h1>Modification de l'étudiant : {{ student.name }}</h1>
+    </header>
+
+    <nav class="main-nav">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link">Accueil</a></li>
+            <li class="nav-item"><a href="{{ url_for('register') }}" class="nav-link">Ajouter un autre étudiant</a></li>
+            <li class="nav-item"><a href="{{ url_for('show_students') }}" class="nav-link current">Liste des Étudiants</a></li>
+            
+            <li class="nav-item"><a href="{{ url_for('logout') }}" class="nav-link">Déconnexion</a></li>
+        </ul>
+    </nav>
+    
+    <main class="container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for message in messages %}
+                        <p class="alert">{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        
+        <div class="form-wrapper"> 
+            <form action="{{ url_for('update_student', student_id=student.id) }}" method="POST" class="data-form">
+                
+                <div class="form-group">
+                    <label for="id_view" class="form-label">Numéro Étudiant (ID) :</label>
+                    <input type="text" id="id_view" value="{{ student.id }}" class="form-input" readonly>
+                </div>
+                
+                <div class="form-group">
+                    <label for="name" class="form-label">Nom Complet :</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        class="form-input" 
+                        required 
+                        value="{{ student.name }}"
+                        pattern="[A-Za-z\s\u0621-\u064A]+"
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="form-label">Email :</label>
+                    <input type="email" id="email" name="email" class="form-input" required value="{{ student.email }}">
+                </div>
+                
+                <div class="form-group">
+                    <label for="classe" class="form-label">Classe :</label>
+                    <select name="classe" id="classe" class="form-select">
+                        <optgroup label="1ère Année">
+                            <option value="BCG" {% if student.classe == 'BCG' %} selected {% endif %}>BCG</option>
+                            <option value="MIP" {% if student.classe == 'MIP' %} selected {% endif %}>MIP</option>
+                            <option value="PHY" {% if student.classe == 'PHY' %} selected {% endif %}>PHY</option>
+                            <option value="INFO" {% if student.classe == 'INFO' %} selected {% endif %}>INFO</option>
+                        </optgroup>
+                        <optgroup label="2ème Année">
+                            <option value="Chimie" {% if student.classe == 'Chimie' %} selected {% endif %}>Chimie</option>
+                            <option value="BioScience" {% if student.classe == 'BioScience' %} selected {% endif %}>BioScience</option>
+                            <option value="Informatique" {% if student.classe == 'Informatique' %} selected {% endif %}>Informatique</option>
+                            <option value="Informatique Appliquée" {% if student.classe == 'Informatique Appliquée' %} selected {% endif %}>Informatique Appliquée</option>
+                            <option value="Mathématiques" {% if student.classe == 'Mathématiques' %} selected {% endif %}>Mathématiques</option>
+                            <option value="PHYSIQUE" {% if student.classe == 'PHYSIQUE' %} selected {% endif %}>Physique</option>
+                        </optgroup>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">save</button>
+            </form>
+        </div>
+    </main>
+    
+    <footer class="main-footer">
+        <p class="footer-text">&copy; 2026 Site de Gestion des Étudiants | Développé par Mohamed</p>
+    </footer>
+</body>
+</html>
