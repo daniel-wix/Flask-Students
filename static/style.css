@@ -1,7 +1,7 @@
-/* --- الإعدادات العامة والتنسيقات الأساسية --- */
+/* --- base style--- */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f7f6; /* خلفية خفيفة */
+    background-color: #f4f7f6; 
     color: #333;
     margin: 0;
     padding: 0;
@@ -25,9 +25,9 @@ body {
     margin-bottom: 25px;
 }
 
-/* --- تنسيق الـ Header وقائمة التنقل --- */
+/* --- Header style--- */
 .main-header {
-    background-color: #007bff; /* أزرق أساسي */
+    background-color: #007bff; 
     color: white;
     padding: 15px 0;
     text-align: center;
@@ -62,13 +62,13 @@ body {
     background-color: #0056b3;
 }
 
-/* --- تنسيق الـ Footer --- */
+/* --- Footer style --- */
 .main-footer {
     background-color: #333;
     color: #bbb;
     text-align: center;
     padding: 10px 0;
-    margin-top: 40px;
+    margin-top: 30%;
 }
 
 .footer-text {
@@ -76,7 +76,7 @@ body {
     margin: 0;
 }
 
-/* --- تنسيق رسائل Flash (الخطأ والنجاح) --- */
+/* --- flash messages style --- */
 .flash-messages {
     margin-bottom: 20px;
     padding: 10px;
@@ -91,21 +91,21 @@ body {
     border-radius: 5px;
 }
 
-/* لون للرسائل التي تحتوي على كلمة 'Erreur' */
+/*'Erreur messages style' */
 .alert:has(> *[class*="Erreur"]) {
     background-color: #f8d7da; /* خلفية حمراء فاتحة */
     color: #721c24; /* خط أحمر غامق */
     border: 1px solid #f5c6cb;
 }
 
-/* لون للرسائل التي تحتوي على كلمة 'Succès' */
+/* Succès messages style */
 .alert:has(> *[class*="Succès"]) {
-    background-color: #d4edda; /* خلفية خضراء فاتحة */
-    color: #155724; /* خط أخضر غامق */
+    background-color: #d4edda; 
+    color: #155724; 
     border: 1px solid #c3e6cb;
 }
 
-/* --- تنسيق الجداول (Table Styling) --- */
+/* --- (Table Styling) --- */
 .data-table {
     width: 100%;
     border-collapse: collapse; 
@@ -128,7 +128,7 @@ body {
     text-align: left;
 }
 
-.table-row:nth-child(even) { /* تلوين الصفوف الزوجية */
+.table-row:nth-child(even) { /*Coloration des lignes paires*/
     background-color: #f2f2f2;
 }
 
@@ -147,7 +147,7 @@ body {
     color: #888;
 }
 
-/* --- تنسيق النموذج (Form Styling) --- */
+/* --- (Form Styling) --- */
 .data-form {
     max-width: 500px;
     margin: 0 auto;
@@ -177,7 +177,7 @@ body {
     font-size: 1em;
 }
 
-/* --- تنسيق الأزرار (Button Styling) --- */
+/* --- (Button Styling) --- */
 .btn {
     padding: 12px 20px;
     border: none;
@@ -188,7 +188,7 @@ body {
 }
 
 .btn-primary {
-    background-color: #28a745; /* أخضر للإرسال */
+    background-color: #28a745;
     color: white;
     width: 100%;
     font-size: 1.1em;
@@ -201,7 +201,7 @@ body {
 /* --- تنسيق أزرار الإجراءات في الجدول --- */
 .action-buttons {
     text-align: center;
-    width: 150px; /* لتحديد عرض العمود */
+    width: 150px; /*colone with*/
 }
 
 .btn-action {
@@ -214,7 +214,7 @@ body {
 }
 
 .btn-edit {
-    background-color: #ffc107; /* أصفر/برتقالي للتعديل */
+    background-color: #ffc107;
 }
 
 .btn-edit:hover {
@@ -222,8 +222,8 @@ body {
 }
 
 .btn-delete {
-    background-color: #dc3545; /* أحمر للحذف */
-    border: none; /* لأن زر الحذف button وليس a */
+    background-color: #dc3545; 
+    border: none; 
 }
 
 .btn-delete:hover {

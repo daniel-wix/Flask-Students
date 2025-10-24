@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S'inscrire - Ajouter Étudiant</title>
+    <title>S'inscrire - Ajouter Etudiant</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     
     <header class="main-header">
-        <h1>Gestion des Étudiants</h1>
+        <h1>Gestion des Etudiants</h1>
         <nav class="main-nav">
             <ul class="nav-list">
                 <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link {% if request.endpoint == 'index' %}current{% endif %}">Accueil</a></li>
-                <li class="nav-item"><a href="{{ url_for('register') }}" class="nav-link {% if request.endpoint == 'register' %}current{% endif %}">Ajouter un autre étudiant</a></li>
+                <li class="nav-item"><a href="{{ url_for('register') }}" class="nav-link {% if request.endpoint == 'register' %}current{% endif %}">Ajouter un autre Etudiant</a></li>
                 
                 <li class="nav-item">
                     {% if session.logged_in %}
-                        <a href="{{ url_for('show_students') }}" class="nav-link">Liste des Étudiants</a>
+                        <a href="{{ url_for('show_students') }}" class="nav-link">Liste des Etudiants</a>
                     {% else %}
-                        <a href="{{ url_for('login') }}" class="nav-link">Liste des Étudiants (Connexion)</a>
+                        <a href="{{ url_for('login') }}" class="nav-link">Liste des Etudiants (Connexion)</a>
                     {% endif %}
                 </li>
                 
                 {% if session.logged_in %}
-                <li class="nav-item"><a href="{{ url_for('logout') }}" class="nav-link">Déconnexion</a></li>
+                <li class="nav-item"><a href="{{ url_for('logout') }}" class="nav-link">Deconnexion</a></li>
                 {% endif %}
             </ul>
         </nav>
@@ -56,12 +56,12 @@
                         required 
                         autofocus
                         pattern="[A-Za-z\s\u0621-\u064A]+"
-                        title="Seules les lettres et les espaces sont autorisés pour le nom."
+                        title="Seules les lettres et les espaces sont autorisEs pour le nom."
                     >
                 </div>
                 
                 <div class="form-group">
-                    <label for="id" class="form-label">Numéro Étudiant (ID) :</label>
+                    <label for="id" class="form-label">NumEro Etudiant (ID) :</label>
                     <input 
                         type="number" 
                         id="id" 
@@ -82,18 +82,18 @@
                 <div class="form-group">
                     <label for="classe" class="form-label">Classe :</label>
                     <select name="classe" id="classe" class="form-select">
-                        <optgroup label="1ère Année">
+                        <optgroup label="1ère AnnEe">
                             <option value="BCG">BCG</option>
                             <option value="MIP">MIP</option>
                             <option value="PHY">PHY</option>
                             <option value="INFO">INFO</option>
                         </optgroup>
-                        <optgroup label="2ème Année">
+                        <optgroup label="2ème AnnEe">
                             <option value="Chimie">Chimie</option>
                             <option value="BioScience">BioScience</option>
                             <option value="Informatique">Informatique</option>
-                            <option value="Informatique Appliquée">Informatique Appliquée</option>
-                            <option value="Mathématiques">Mathématiques</option>
+                            <option value="Informatique AppliquEe">Informatique AppliquEe</option>
+                            <option value="MathEmatiques">MathEmatiques</option>
                             <option value="PHYSIQUE">Physique</option>
                         </optgroup>
                     </select>
@@ -105,7 +105,7 @@
     </main>
     
     <footer class="main-footer">
-        <p class="footer-text">&copy; 2026 Site de Gestion des Étudiants | Développé par Mohamed</p>
+        <p class="footer-text">&copy; 2026 Site de Gestion des Etudiants | Developpe par Mohamed</p>
     </footer>
 </body>
 </html>

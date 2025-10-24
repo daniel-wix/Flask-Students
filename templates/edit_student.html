@@ -9,16 +9,16 @@
 <body>
     
     <header class="main-header">
-        <h1>Modification de l'étudiant : {{ student.name }}</h1>
+        <h1>Modification de l'etudiant : {{ student.name }}</h1>
     </header>
 
     <nav class="main-nav">
         <ul class="nav-list">
             <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link">Accueil</a></li>
-            <li class="nav-item"><a href="{{ url_for('register') }}" class="nav-link">Ajouter un autre étudiant</a></li>
-            <li class="nav-item"><a href="{{ url_for('show_students') }}" class="nav-link current">Liste des Étudiants</a></li>
+            <li class="nav-item"><a href="{{ url_for('register') }}" class="nav-link">Ajouter un autre etudiant</a></li>
+            <li class="nav-item"><a href="{{ url_for('show_students') }}" class="nav-link current">Liste des etudiants</a></li>
             
-            <li class="nav-item"><a href="{{ url_for('logout') }}" class="nav-link">Déconnexion</a></li>
+            <li class="nav-item"><a href="{{ url_for('logout') }}" class="nav-link">Deconnexion</a></li>
         </ul>
     </nav>
     
@@ -37,7 +37,7 @@
             <form action="{{ url_for('update_student', student_id=student.id) }}" method="POST" class="data-form">
                 
                 <div class="form-group">
-                    <label for="id_view" class="form-label">Numéro Étudiant (ID) :</label>
+                    <label for="id_view" class="form-label">Numero etudiant (ID) :</label>
                     <input type="text" id="id_view" value="{{ student.id }}" class="form-input" readonly>
                 </div>
                 
@@ -62,18 +62,18 @@
                 <div class="form-group">
                     <label for="classe" class="form-label">Classe :</label>
                     <select name="classe" id="classe" class="form-select">
-                        <optgroup label="1ère Année">
+                        <optgroup label="1ere Annee">
                             <option value="BCG" {% if student.classe == 'BCG' %} selected {% endif %}>BCG</option>
                             <option value="MIP" {% if student.classe == 'MIP' %} selected {% endif %}>MIP</option>
                             <option value="PHY" {% if student.classe == 'PHY' %} selected {% endif %}>PHY</option>
                             <option value="INFO" {% if student.classe == 'INFO' %} selected {% endif %}>INFO</option>
                         </optgroup>
-                        <optgroup label="2ème Année">
+                        <optgroup label="2eme Annee">
                             <option value="Chimie" {% if student.classe == 'Chimie' %} selected {% endif %}>Chimie</option>
                             <option value="BioScience" {% if student.classe == 'BioScience' %} selected {% endif %}>BioScience</option>
                             <option value="Informatique" {% if student.classe == 'Informatique' %} selected {% endif %}>Informatique</option>
-                            <option value="Informatique Appliquée" {% if student.classe == 'Informatique Appliquée' %} selected {% endif %}>Informatique Appliquée</option>
-                            <option value="Mathématiques" {% if student.classe == 'Mathématiques' %} selected {% endif %}>Mathématiques</option>
+                            <option value="Informatique Appliquee" {% if student.classe == 'Informatique Appliquee' %} selected {% endif %}>Informatique Appliquee</option>
+                            <option value="Mathematiques" {% if student.classe == 'Mathematiques' %} selected {% endif %}>Mathematiques</option>
                             <option value="PHYSIQUE" {% if student.classe == 'PHYSIQUE' %} selected {% endif %}>Physique</option>
                         </optgroup>
                     </select>
@@ -85,7 +85,7 @@
     </main>
     
     <footer class="main-footer">
-        <p class="footer-text">&copy; 2026 Site de Gestion des Étudiants | Développé par Mohamed</p>
+        <p class="footer-text">&copy; 2026 Site de Gestion des etudiants | Developpe par Mohamed</p>
     </footer>
 </body>
 </html>

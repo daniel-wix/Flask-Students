@@ -9,7 +9,7 @@
 <body>
     
     <header class="main-header">
-        <h1>Accès à la Liste des Étudiants</h1>
+        <h1>Acces a la Liste des etudiants</h1>
     </header>
 
     <nav class="main-nav">
@@ -18,7 +18,7 @@
             <li class="nav-item"><a href="{{ url_for('register') }}" class="nav-link">Inscription</a></li>
             <li class="nav-item"><a href="{{ url_for('login') }}" class="nav-link current">Connexion</a></li>
             {% if session.logged_in %}
-                <li class="nav-item"><a href="{{ url_for('logout') }}" class="nav-link">Déconnexion</a></li>
+                <li class="nav-item"><a href="{{ url_for('logout') }}" class="nav-link">Deconnexion</a></li>
             {% endif %}
         </ul>
     </nav>
@@ -55,7 +55,7 @@
     </main>
 
     <footer class="main-footer">
-        <p class="footer-text">&copy; 2026 Site de Gestion des Étudiants | Développé par Mohamed</p>
+        <p class="footer-text">&copy; 2026 Site de Gestion des etudiants | Developpe par Mohamed</p>
     </footer>
 </body>
 </html>
